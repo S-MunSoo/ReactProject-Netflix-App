@@ -7,3 +7,5 @@
 - Redux : npm i redux react-redux
 - ReactThunk : npm i redux-thunk
 - Redux-devtools : npm i --save redux-devtools-extension
+- React-multi-carousel(슬라이드) : npm install react-multi-carousel --save
+- React Spinners : npm install --save react-spinners
