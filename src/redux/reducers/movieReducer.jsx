@@ -10,9 +10,9 @@ function movieReducer(state = initialState, action) {
     case "GET_MOVIE_SUCCESS":
       return {
         ...state,
-        popularMovies: payload.popular,
-        topRatedMovies: payload.topRated,
-        upcomingMovies: payload.upcoming,
+        popularMovies: payload.popularMovie,
+        topRatedMovies: payload.topRatedMovie,
+        upcomingMovies: payload.upcomingMovie,
       };
     default:
       return { ...state };
