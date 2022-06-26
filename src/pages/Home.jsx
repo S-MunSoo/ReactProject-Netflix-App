@@ -11,33 +11,42 @@ const Home = () => {
   const dispatch = useDispatch();
   const { popularMovies, topRatedMovies, upcomingMovies, loading } =
     useSelector((state) => state.movie);
+
   console.log("home???", popularMovies, topRatedMovies, upcomingMovies);
 
   useEffect(() => {
     dispatch(movieAction.getMovies());
   }, []);
-  // 로딩이 true면 로딩스피너를 보여주고
+  // 로딩이 true면 로딩스피너를 안 보여주고
   // 로딩이 펄스면 데이터를 보여준다.
   // true : 데이터 도착전
   // falsee : 데이터 도착 후 or err
 
-  if (loading === true) {
-    return <ClipLoader color="#fffff" loading={loading} size={150} />;
+  if (loading) {
+    return (
+      <ClipLoader
+        color="#B22222"
+        loading={loading}
+        size={150}
+        className="loading"
+      />
+    );
+  } else {
+    return (
+      <div>
+        {/* 조건부 랜더링 uesEffect는 한번만 호출할 수 잇기때문에 */}
+        <Banner movie={popularMovies.results[0]} />
+        <div className="Home-section">
+          <h1>Popular Movies</h1>
+          <MovieSlide movies={popularMovies} />
+          <h1>TopRated Movies</h1>
+          <MovieSlide movies={topRatedMovies} />
+          <h1>Upcoming Movies</h1>
+          <MovieSlide movies={upcomingMovies} />
+        </div>
+      </div>
+    );
   }
-  return (
-    <div className="Home-section">
-      {/* 조건부 랜더링 uesEffect는 한번만 호출할 수 잇기때문에 */}
-
-      <Banner movie={popularMovies.results[0]} />
-
-      <h1>Popular Movies</h1>
-      <MovieSlide movies={popularMovies} />
-      <h1>TopRated Movies</h1>
-      <MovieSlide movies={topRatedMovies} />
-      <h1>Upcoming Movies</h1>
-      <MovieSlide movies={upcomingMovies} />
-    </div>
-  );
 };
 
 export default Home;
