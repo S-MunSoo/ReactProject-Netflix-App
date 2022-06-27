@@ -7,10 +7,11 @@ $font-color: #fff;
   justify-content: center;
   align-items: center;
 }
-body {
-  padding: 0;
-  margin: 0;
+* {
   box-sizing: border-box;
+}
+body {
+  margin: 0 auto;
 }
 // 헤더부분
 .nav-bar {
@@ -89,6 +90,12 @@ body {
     align-items: center;
   }
 }
-// .css-1e7cibq {
-//   transform: translateX(100px);
-// }
+// loading center 질문하기
+.home-loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(250%);
+}

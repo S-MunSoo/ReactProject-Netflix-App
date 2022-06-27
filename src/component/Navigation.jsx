@@ -12,8 +12,12 @@ const Navigation = () => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg" className="nav-bar">
       <Container fluid>
-        <Navbar.Brand href="#">
-          <img src="./images/logo.png" alt="logo" width={100} />
+        <Navbar.Brand href="#" className="nav-back">
+          <img
+            src="https://w7.pngwing.com/pngs/405/185/png-transparent-netflix-hd-logo.png"
+            alt="logo"
+            width={100}
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

@@ -9,6 +9,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 const Home = () => {
   const dispatch = useDispatch();
+
   const { popularMovies, topRatedMovies, upcomingMovies, loading } =
     useSelector((state) => state.movie);
 
@@ -23,8 +24,11 @@ const Home = () => {
   // falsee : 데이터 도착 후 or err
 
   if (loading) {
-    console.log("로당", loading);
-    return <ClipLoader color="#B22222" loading={loading} size={150} />;
+    return (
+      <div className="home-loading">
+        <ClipLoader color="#B22222" loading={loading} size={150} />
+      </div>
+    );
   } else {
     return (
       <div>
