@@ -48,9 +48,10 @@ body {
 }
 // 홈 section
 .Home-section {
+  width: 100%;
   background-color: $back--groundColor;
   color: $font-color;
-  padding: 36px;
+  padding: 32px;
   & h1 {
     padding: 16px;
   }
@@ -85,8 +86,9 @@ body {
   .card-info {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 }
-// .loading {
-//   transform: translateX(50%);
+// .css-1e7cibq {
+//   transform: translateX(100px);
 // }

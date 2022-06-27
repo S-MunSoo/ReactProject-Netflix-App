@@ -11,6 +11,7 @@ function movieReducer(state = initialState, action) {
   switch (type) {
     case "GET_MOVIES_REQUEST":
       return { ...state, loading: true };
+
     case "GET_MOVIE_SUCCESS":
       return {
         ...state,
@@ -20,6 +21,7 @@ function movieReducer(state = initialState, action) {
         loading: false,
         genreList: payload.genreList,
       };
+
     case "GET_MOVIES_FAILURE":
       return { ...state, loading: false };
     default:

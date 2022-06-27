@@ -26,7 +26,7 @@ const MovieCard = ({ item }) => {
         <div className="card-info">
           <span>평점 : {item.vote_average}</span>
           <Badge pill bg="danger">
-            {item.adult ? "청불" : "전체관람"}{" "}
+            {item.adult ? "청불" : "전체관람"}
           </Badge>
         </div>
       </div>

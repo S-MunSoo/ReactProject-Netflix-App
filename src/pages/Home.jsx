@@ -23,14 +23,8 @@ const Home = () => {
   // falsee : 데이터 도착 후 or err
 
   if (loading) {
-    return (
-      <ClipLoader
-        color="#B22222"
-        loading={loading}
-        size={150}
-        className="loading"
-      />
-    );
+    console.log("로당", loading);
+    return <ClipLoader color="#B22222" loading={loading} size={150} />;
   } else {
     return (
       <div>
