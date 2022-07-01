@@ -1,7 +1,7 @@
 import React from "react";
 
 const Banner = ({ movie }) => {
-  console.log("Banner movie???", movie);
+  // console.log("Banner movie???", movie);
   return (
     <div
       className="Banner"

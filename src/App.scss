@@ -99,3 +99,20 @@ body {
   align-items: center;
   transform: translateY(250%);
 }
+.detail-banner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  & img {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  & h3 {
+    color: $font-color;
+    position: absolute;
+    transform: translateY(150px);
+    font-size: 46px;
+  }
+}

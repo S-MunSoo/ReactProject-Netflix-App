@@ -1,16 +1,27 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import DetailBanner from "../component/DetailBanner";
+import { useParams } from "react-router-dom";
 // import { useSelector } from "react-redux";
-const MovieDetailPage = () => {
-  // const { popularMovies, topRatedMovies, upcomingMovies } = useSelector(
-  //   (state) => state.movie
-  // );
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
+const MovieDetailPage = () => {
+  let { id } = useParams();
+  console.log("id", id);
+  // const detailMovie = useSelector((state) => state.movie);
   const dispatch = useDispatch();
+
+  // const getMovies = (id) => {
+  //   dispatch(movieAction.getMovies(id));
+  // };
   // useEffect(() => {
-  //   dispatch(movieAction.getMovies());
+  //   getMovies();
   // }, []);
-  return <div>영화디테일</div>;
+
+  return (
+    <div>
+      <DetailBanner />
+    </div>
+  );
 };
 
 export default MovieDetailPage;

@@ -4,7 +4,7 @@ import api from "../reducers/api";
 // 미들웨어는 함수를 리턴한다 함수(dispatch , getState)
 // .env 파일에 API 보호 하여 이용
 const API_KEY = process.env.REACT_APP_API_KEY;
-function getMovies() {
+function getMovies(id) {
   return async (dispatch) => {
     try {
       // 데이터 도착 전 로딩 true
