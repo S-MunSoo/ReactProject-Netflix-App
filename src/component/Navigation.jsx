@@ -14,7 +14,7 @@ const Navigation = () => {
       <Container fluid>
         <Navbar.Brand href="#" className="nav-back">
           <img
-            src="https://w7.pngwing.com/pngs/405/185/png-transparent-netflix-hd-logo.png"
+            src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
             alt="logo"
             width={100}
           />

@@ -18,7 +18,7 @@ function movieReducer(state = initialState, action) {
         popularMovies: payload.popularMovie,
         topRatedMovies: payload.topRatedMovie,
         upcomingMovies: payload.upcomingMovie,
-        loading: false,
+        loading: false, // 데이터를 보여줘야 하니까 로딩은 false
         genreList: payload.genreList,
       };
 
