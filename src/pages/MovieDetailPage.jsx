@@ -9,6 +9,7 @@ import DetailCard from "../component/DetailCard";
 const MovieDetailPage = () => {
   let { id } = useParams();
   console.log("id", id);
+
   const movieDetail = useSelector((state) => state.detailMovie);
   const dispatch = useDispatch();
 
@@ -17,7 +18,7 @@ const MovieDetailPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="detail-home">
       <DetailBanner />
       <DetailCard detail={movieDetail} />
     </div>

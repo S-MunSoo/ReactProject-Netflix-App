@@ -2,6 +2,7 @@ let initialState = {
   popularDetail: {},
   topRatedDetail: {},
   upcomingDetail: {},
+  genreDetail: [],
 };
 
 function detailReducer(state = initialState, action) {
@@ -13,6 +14,7 @@ function detailReducer(state = initialState, action) {
         popularDetail: payload.popularDetail,
         topRatedDetail: payload.topRatedDetail,
         upcomingDetail: payload.upcomingDetail,
+        genreDetail: payload.genreDetail,
       };
     default:
       return { ...state };

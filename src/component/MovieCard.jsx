@@ -31,7 +31,7 @@ const MovieCard = ({ item }) => {
           ))}
         </div>
         <div className="card-info">
-          <span>평점 : {item.vote_average}</span>
+          <span>⭐ {item.vote_average}</span>
           <Badge pill bg="danger">
             {item.adult ? "청불" : "전체관람"}
           </Badge>
