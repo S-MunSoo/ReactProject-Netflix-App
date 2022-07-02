@@ -61,8 +61,8 @@ const DetailCard = ({ detail }) => {
           </div>
           {/* budget , revenue , release_date , runtime */}
           <div className="detail-budgets">
-            <div className="detail-budget ">
-              <Badge pill bg="danger">
+            <div>
+              <Badge pill bg="danger" className="detail-budget">
                 Budget
               </Badge>
               <span>
@@ -72,8 +72,8 @@ const DetailCard = ({ detail }) => {
                   detail.upcomingDetail.budget}
               </span>
             </div>
-            <div className="detail-revenue">
-              <Badge pill bg="danger">
+            <div>
+              <Badge pill bg="danger" className="detail-revenue">
                 Revenue
               </Badge>
               <span>
@@ -83,8 +83,8 @@ const DetailCard = ({ detail }) => {
                   detail.upcomingDetail.revenue}
               </span>
             </div>
-            <div className="detail-release">
-              <Badge pill bg="danger">
+            <div>
+              <Badge pill bg="danger" className="detail-release">
                 Release Day
               </Badge>
               <span>
@@ -93,8 +93,8 @@ const DetailCard = ({ detail }) => {
                   detail.upcomingDetail.release_date}
               </span>
             </div>
-            <div className="detail-runtime">
-              <Badge pill bg="danger">
+            <div>
+              <Badge pill bg="danger" className="detail-runtime">
                 Run Time
               </Badge>
               <span>
