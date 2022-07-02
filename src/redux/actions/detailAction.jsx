@@ -1,24 +1,34 @@
-// import api from "../reducers/api";
+import api from "../reducers/api";
 
-// const API_KEY = process.env.REACT_APP_API_KEY;
-// function getMovieDetail() {
-//   return async (dispatch) => {
-//     dispatch({ type: "GET_MOVIES_DETAIL" });
-//     const popularMovieApi = api.get(
-//       `/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
-//     );
-//     const topRatedApi = api.get(
-//       `/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
-//     );
-//     const upcomingApi = api.get(
-//       `movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`
-//     );
+const API_KEY = process.env.REACT_APP_API_KEY;
 
-//     let [popularDetail, topRatedDetail, upcomingDetail] = await Promise.all([
-//       popularMovieApi,
-//       topRatedApi,
-//       upcomingApi,
-//     ]);
-//   };
-// }
-// export const detailAction = { getMovieDetail };
+function getMovieDetail(id) {
+  return async (dispatch) => {
+    const popularDetailApi = api.get(
+      `/movie/${id}popular?api_key=${API_KEY}&language=en-US&page=1`
+    );
+    const topRatedDetailApi = api.get(
+      `/movie/${id}top_rated?api_key=${API_KEY}&language=en-US&page=1`
+    );
+    const upcomingDetailApi = api.get(
+      `/movie/${id}upcoming?api_key=${API_KEY}&language=en-US&page=1`
+    );
+
+    let [popularDetail, topRatedDetail, upcomingDetail] = await Promise.all([
+      popularDetailApi,
+      topRatedDetailApi,
+      upcomingDetailApi,
+    ]);
+    console.log(popularDetail, topRatedDetail, upcomingDetail);
+
+    dispatch({
+      type: "GET_MOVIES_DETAIL",
+      payload: {
+        popularDetail: popularDetail.data,
+        topRatedDetail: topRatedDetail.data,
+        upcomingDetail: upcomingDetail.data,
+      },
+    });
+  };
+}
+export const detailAction = { getMovieDetail };

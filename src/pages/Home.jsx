@@ -18,6 +18,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(movieAction.getMovies());
   }, []);
+
   // 로딩이 true면 로딩스피너를 보여주고
   // 로딩이 펄스면 데이터를 보여준다.
   // true : 데이터 도착전
