@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col, Badge } from "react-bootstrap";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import WatchTrailer from "./WatchTrailer";
 
 const DetailCard = ({ detail }) => {
   console.log("detail", detail);
@@ -103,6 +104,9 @@ const DetailCard = ({ detail }) => {
                   detail.upcomingDetail.runtime}
               </span>
             </div>
+          </div>
+          <div>
+            <WatchTrailer />
           </div>
         </Col>
       </Row>
