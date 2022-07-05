@@ -1,6 +1,7 @@
 $back--groundColor: #212529;
 $header-background: #0f0d09;
 $font-color: #fff;
+$font-family: "Montserrat", sans-serif;
 // 구글 폰트
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,300&display=swap");
 
@@ -202,6 +203,23 @@ body {
   }
   & span {
     margin: 6px;
+  }
+}
+
+// movie detail review
+.review-btn {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-left: 100px;
+  margin-top: 140px;
+
+  & Button {
+    width: 200px;
+    height: 60px;
+    font-size: 22px;
+    font-family: $font-family;
+    border-radius: 10px;
   }
 }
 // footer

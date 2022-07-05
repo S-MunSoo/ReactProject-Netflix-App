@@ -5,7 +5,8 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { detailAction } from "../redux/actions/detailAction";
 import DetailCard from "../component/DetailCard";
-
+import MovieReview from "../component/MovieReview";
+import WatchTrailer from "../component/WatchTrailer";
 const MovieDetailPage = () => {
   let { id } = useParams();
   console.log("id", id);
@@ -21,6 +22,8 @@ const MovieDetailPage = () => {
     <div className="detail-home">
       <DetailBanner />
       <DetailCard detail={movieDetail} />
+      <WatchTrailer Trailer={movieDetail.movieYoutube} />
+      <MovieReview review={movieDetail.movieReviews} />
     </div>
   );
 };

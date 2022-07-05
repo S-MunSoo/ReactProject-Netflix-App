@@ -19,25 +19,31 @@ function getMovieDetail(id) {
     const movieYoutubeApi = api.get(
       `/movie/${id}/videos?api_key=${API_KEY}&language=en-US`
     );
+    const movieReviewApi = api.get(
+      `/movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`
+    );
     let [
       popularDetail,
       topRatedDetail,
       upcomingDetail,
       genreDetail,
       movieYoutube,
+      movieReviews,
     ] = await Promise.all([
       popularDetailApi,
       topRatedDetailApi,
       upcomingDetailApi,
       genreDetailApi,
       movieYoutubeApi,
+      movieReviewApi,
     ]);
     console.log(
-      "movieYoutube",
+      "movieAPITest ",
       popularDetail,
       topRatedDetail,
       upcomingDetail,
-      movieYoutube
+      movieYoutube,
+      movieReviews
     );
 
     dispatch({
@@ -48,6 +54,7 @@ function getMovieDetail(id) {
         upcomingDetail: upcomingDetail.data,
         genreDetail: genreDetail.data,
         movieYoutube: movieYoutube.data,
+        movieReviews: movieReviews.data,
       },
     });
   };
