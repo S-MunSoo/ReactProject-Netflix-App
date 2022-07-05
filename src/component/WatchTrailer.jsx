@@ -19,9 +19,11 @@ const WatchTrailer = ({ Trailer }) => {
 
   return (
     <div>
-      <Button onClick={() => setSmShow(true)} className="me-2">
-        Small modal
-      </Button>
+      <div className="youtube-btn">
+        <Button onClick={() => setSmShow(true)} className="me-2">
+          Trailer View
+        </Button>
+      </div>
       <div className="youtube-modal">
         <Modal
           className="modal-title"
