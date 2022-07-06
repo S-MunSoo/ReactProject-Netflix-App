@@ -2,15 +2,15 @@ import React from "react";
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import YouTube from "react-youtube";
-import ModalBody from "react-bootstrap/ModalBody";
 
 const WatchTrailer = ({ Trailer }) => {
   const [smShow, setSmShow] = useState(false);
   console.log("Trailer??", Trailer);
 
   const opts = {
-    height: "540px",
-    width: "960pxx",
+    height: "720px",
+    width: "1280px",
+
     playerVars: {
       autoplay: 1,
       rel: 0,
@@ -32,14 +32,15 @@ const WatchTrailer = ({ Trailer }) => {
           onHide={() => setSmShow(false)}
           aria-labelledby="example-modal-sizes-title-sm"
         >
-          <ModalBody className="modal-body">
+          <div className="youtube-player">
             {
               <YouTube
+                className="yotu"
                 videoId={Trailer.results && Trailer.results[0].key}
                 opts={opts}
               />
             }
-          </ModalBody>
+          </div>
         </Modal>
       </div>
     </div>

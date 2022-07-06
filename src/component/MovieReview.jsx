@@ -10,31 +10,17 @@ const MovieReview = ({ review }) => {
           <Button variant="danger">REVIEWS ({review.total_results})</Button>
         </div>
         <div className="review-area">
-          <div className="review-content">
-            <h4> {review.results && review.results[0]?.author}</h4>
-            <p> {review.results && review.results[0]?.content}</p>
-            <span>{review.results && review.results[0]?.created_at}</span>
+          <div>
+            {review.results &&
+              review.results.map((item) => (
+                <div key={item}>
+                  <h4>{item.author}</h4>
+                  <p>{item.content}</p>
+                  <span>{item.created_at}</span>
+                </div>
+                // 노란줄 빨간줄 뜨면 플레그먼트!!!1
+              ))}
           </div>
-          <div className="review-content">
-            <h4> {review.results && review.results[1]?.author}</h4>
-            <p> {review.results && review.results[1]?.content}</p>
-            <span>{review.results && review.results[1]?.created_at}</span>
-          </div>
-          <div className="review-content">
-            <h4> {review.results && review.results[2]?.author}</h4>
-            <p> {review.results && review.results[2]?.content}</p>
-            <span>{review.results && review.results[2]?.created_at}</span>
-          </div>
-          <div className="review-content">
-            <h4> {review.results && review.results[3]?.author}</h4>
-            <p> {review.results && review.results[3]?.content}</p>
-            <span>{review.results && review.results[3]?.created_at}</span>
-          </div>
-
-          {/* <p>
-              {review.results &&
-                review.results.map((item) => <p>{item.content}</p>)}
-            </p> */}
         </div>
       </Container>
     </div>

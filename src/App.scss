@@ -271,6 +271,20 @@ body {
     }
   }
 }
+.youtube-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // .modal-title {
+  //   opacity: 0;
+  // }
+  .youtube-player {
+    transform: translateX(-300px);
+    & .YouTube {
+      transform: translateX(-50%);
+    }
+  }
+}
 
 // footer
 footer {
