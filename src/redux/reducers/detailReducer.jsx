@@ -5,6 +5,7 @@ let initialState = {
   genreDetail: [],
   movieYoutube: [],
   movieReviews: [],
+  movieRelated: [],
 };
 
 function detailReducer(state = initialState, action) {
@@ -19,6 +20,7 @@ function detailReducer(state = initialState, action) {
         genreDetail: payload.genreDetail,
         movieYoutube: payload.movieYoutube,
         movieReviews: payload.movieReviews,
+        movieRelated: payload.movieRelated,
       };
     default:
       return { ...state };

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const MovieCard = ({ item }) => {
   const { genreList } = useSelector((state) => state.movie);
+
   const navigate = useNavigate();
 
   const showDetail = () => {

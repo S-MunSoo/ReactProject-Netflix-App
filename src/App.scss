@@ -129,10 +129,10 @@ body {
 
 // Movie detail 메인 페이지
 .detail-home {
-  width: 100%;
-  height: 2700px;
   background-color: $back--groundColor;
   color: $font-color;
+  width: 100%;
+  height: 100%;
 }
 // Movie detail-card
 .detail-card {
@@ -140,7 +140,6 @@ body {
   justify-content: flex-end;
   width: 100%;
   height: 100%;
-
   & img {
     width: 520px;
     height: 700px;
@@ -207,30 +206,18 @@ body {
   }
 }
 
-// movie detail review
-.review-btn {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin-left: 100px;
-  margin-top: 140px;
-  & Button {
-    width: 200px;
-    height: 62px;
-    font-size: 22px;
-    font-family: $font-family;
-    border-radius: 10px;
-  }
-}
 .review-area {
   border: 3px solid #fff;
   width: 100%;
   height: 100%;
   padding: 40px;
+  cursor: pointer;
+  margin-top: 60px;
   & .review-content {
     padding-top: 20px;
     font-family: $font-family;
     text-align: left;
+    border-bottom: 1px solid #fff;
     & h4 {
       font-size: 14px;
       line-height: 14px;
@@ -248,15 +235,13 @@ body {
   }
 }
 
-// youtube modal
 .youtube-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  // margin-left: 350px;
-  transform: translateX(330px);
+  margin-top: 60px;
   & Button {
-    width: 170px;
+    width: 180px;
     height: 48px;
     background-color: $back--groundColor;
     border: 1px solid #fff;
@@ -271,18 +256,41 @@ body {
     }
   }
 }
-.youtube-modal {
+// youtube 영상 재생
+.modalPop {
   display: flex;
   justify-content: center;
   align-items: center;
-  // .modal-title {
-  //   opacity: 0;
-  // }
-  .youtube-player {
-    transform: translateX(-300px);
-    & .YouTube {
-      transform: translateX(-50%);
-    }
+  background: none;
+  height: 100%;
+  width: 100%;
+  background-color: $back--groundColor;
+}
+
+// Related movies
+
+.reviewRelated-btn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 100px;
+  .review-btn {
+    width: 200px;
+    height: 62px;
+    font-size: 18px;
+    font-family: $font-family;
+    border-radius: 10px;
+    margin-left: 50px;
+  }
+  .related-btn {
+    width: 240px;
+    height: 62px;
+    font-size: 18px;
+    font-family: $font-family;
+    border-radius: 10px;
+    margin-left: 25px;
   }
 }
 

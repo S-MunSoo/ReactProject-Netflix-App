@@ -1,10 +1,24 @@
 import React from "react";
-import { Container, Row, Col, Badge } from "react-bootstrap";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { Container, Row, Col, Badge, Button, Modal } from "react-bootstrap";
+import { useState } from "react";
+import YouTube from "react-youtube";
 
-const DetailCard = ({ detail }) => {
-  console.log("detail", detail);
+const DetailCard = ({ detail, youtube }) => {
+  const [show, setShow] = useState(false);
+  const opts = {
+    height: "720px",
+    width: "1280px",
+
+    playerVars: {
+      autoplay: 1,
+      rel: 0,
+    },
+  };
+  console.log("detail??????", detail);
+
+  // const { genreDetail } = useSelector((state) => state.detailMovie);
+
+  // console.log("genreList?????????", genreDetail);
 
   return (
     <Container>
@@ -21,7 +35,7 @@ const DetailCard = ({ detail }) => {
           />
         </Col>
         <Col className="detail-title">
-          {/* <div>장르 가져오기?</div> */}
+          {/* <div>장르 추가!!</div> */}
           <h1>
             {detail.popularDetail.title &&
               detail.topRatedDetail.title &&
@@ -104,6 +118,25 @@ const DetailCard = ({ detail }) => {
               </span>
             </div>
           </div>
+          <div className="youtube-btn">
+            <Button onClick={() => setShow(true)}>🍿 Trailer View</Button>
+          </div>
+
+          <Modal
+            show={show}
+            onHide={() => setShow(false)}
+            dialogClassName="modal-90w"
+            aria-labelledby="example-custom-modal-styling-title"
+          >
+            <div className="modalPop">
+              {
+                <YouTube
+                  videoId={youtube.results && youtube.results[0].key}
+                  opts={opts}
+                />
+              }
+            </div>
+          </Modal>
         </Col>
       </Row>
     </Container>

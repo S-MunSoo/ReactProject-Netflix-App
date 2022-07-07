@@ -22,6 +22,9 @@ function getMovieDetail(id) {
     const movieReviewApi = api.get(
       `/movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`
     );
+    const movieRelatedApi = api.get(
+      `/movie/${id}/recommendations?api_key=${API_KEY}&language=en-US&page=1`
+    );
     let [
       popularDetail,
       topRatedDetail,
@@ -29,6 +32,7 @@ function getMovieDetail(id) {
       genreDetail,
       movieYoutube,
       movieReviews,
+      movieRelated,
     ] = await Promise.all([
       popularDetailApi,
       topRatedDetailApi,
@@ -36,6 +40,7 @@ function getMovieDetail(id) {
       genreDetailApi,
       movieYoutubeApi,
       movieReviewApi,
+      movieRelatedApi,
     ]);
     console.log(
       "movieAPITest ",
@@ -43,7 +48,8 @@ function getMovieDetail(id) {
       topRatedDetail,
       upcomingDetail,
       movieYoutube,
-      movieReviews
+      movieReviews,
+      movieRelated
     );
 
     dispatch({
@@ -55,6 +61,7 @@ function getMovieDetail(id) {
         genreDetail: genreDetail.data,
         movieYoutube: movieYoutube.data,
         movieReviews: movieReviews.data,
+        movieRelated: movieRelated.data,
       },
     });
   };
