@@ -4,6 +4,7 @@ import { useState } from "react";
 import YouTube from "react-youtube";
 
 const DetailCard = ({ detail, youtube }) => {
+  console.log("디테일?", detail);
   const [show, setShow] = useState(false);
   const opts = {
     height: "720px",
@@ -15,10 +16,6 @@ const DetailCard = ({ detail, youtube }) => {
     },
   };
   console.log("detail??????", detail);
-
-  // const { genreDetail } = useSelector((state) => state.detailMovie);
-
-  // console.log("genreList?????????", genreDetail);
 
   return (
     <Container>

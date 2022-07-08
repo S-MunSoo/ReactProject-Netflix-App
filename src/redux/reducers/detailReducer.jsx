@@ -6,11 +6,15 @@ let initialState = {
   movieYoutube: [],
   movieReviews: [],
   movieRelated: [],
+  // loading: true,
 };
 
 function detailReducer(state = initialState, action) {
   let { type, payload } = action;
   switch (type) {
+    // case "GET_DETAIL_REQUEST":
+    //   return { ...state, loading: true };
+
     case "GET_MOVIES_DETAIL":
       return {
         ...state,
@@ -21,7 +25,10 @@ function detailReducer(state = initialState, action) {
         movieYoutube: payload.movieYoutube,
         movieReviews: payload.movieReviews,
         movieRelated: payload.movieRelated,
+        //
       };
+    // case "GET_DETAIL_FAILURE":
+    //   return { ...state, loading: false };
     default:
       return { ...state };
   }

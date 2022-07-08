@@ -294,6 +294,25 @@ body {
   }
 }
 
+.related-content {
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: $back--groundColor;
+  color: #fff;
+  .related-info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  & img {
+    width: 300px;
+    cursor: pointer;
+  }
+}
 // footer
 footer {
   width: 100%;

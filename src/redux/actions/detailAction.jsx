@@ -42,15 +42,6 @@ function getMovieDetail(id) {
       movieReviewApi,
       movieRelatedApi,
     ]);
-    console.log(
-      "movieAPITest ",
-      popularDetail,
-      topRatedDetail,
-      upcomingDetail,
-      movieYoutube,
-      movieReviews,
-      movieRelated
-    );
 
     dispatch({
       type: "GET_MOVIES_DETAIL",
@@ -67,3 +58,12 @@ function getMovieDetail(id) {
   };
 }
 export const detailAction = { getMovieDetail };
+// console.log(
+//   "movieAPITest ",
+//   popularDetail,
+//   topRatedDetail,
+//   upcomingDetail,
+//   movieYoutube,
+//   movieReviews,
+//   movieRelated
+// );

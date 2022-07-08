@@ -24,8 +24,9 @@ function movieReducer(state = initialState, action) {
 
     case "GET_MOVIES_FAILURE":
       return { ...state, loading: false };
-    case "GET_MOVIES_DETAIL":
-      return { ...state };
+
+    // case "GET_MOVIES_DETAIL":
+    //   return { ...state };
     default:
       return { ...state };
   }

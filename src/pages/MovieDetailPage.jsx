@@ -10,25 +10,25 @@ import MovieReview from "../component/MovieReview";
 const MovieDetailPage = () => {
   let { id } = useParams();
 
-  // const [related, setRelated] = useState("");
   const movieDetail = useSelector((state) => state.detailMovie);
+
+  console.log("movieDetail???", movieDetail);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(detailAction.getMovieDetail(id));
   }, []);
 
-  // useEffect(() => {
-  //   console.log("related", related);
-  // }, [related]);
-
   return (
     <div className="detail-home">
       <DetailBanner />
       <DetailCard detail={movieDetail} youtube={movieDetail.movieYoutube} />
+
       <MovieReview
         review={movieDetail.movieReviews}
         related={movieDetail.movieRelated}
+        item={movieDetail.movieRelated.results}
       />
     </div>
   );

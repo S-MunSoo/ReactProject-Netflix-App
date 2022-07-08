@@ -9,6 +9,7 @@ function getMovies() {
     try {
       // 데이터 도착 전 로딩 true
       dispatch({ type: "GET_MOVIES_REQUEST" });
+
       const popularMovieApi = api.get(
         `/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
       );
@@ -33,7 +34,7 @@ function getMovies() {
       // console.log("popularMovie????", popular);
       // console.log("topRated", topRated);
       // console.log("upcoming", upcoming);
-      // 로딩 데이터 도착 후 false
+
       dispatch({
         type: "GET_MOVIE_SUCCESS",
         payload: {
