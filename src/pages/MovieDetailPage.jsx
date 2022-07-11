@@ -9,7 +9,6 @@ import MovieReview from "../component/MovieReview";
 
 const MovieDetailPage = () => {
   let { id } = useParams();
-
   const movieDetail = useSelector((state) => state.detailMovie);
 
   console.log("movieDetail???", movieDetail);
@@ -24,7 +23,6 @@ const MovieDetailPage = () => {
     <div className="detail-home">
       <DetailBanner />
       <DetailCard detail={movieDetail} youtube={movieDetail.movieYoutube} />
-
       <MovieReview
         review={movieDetail.movieReviews}
         related={movieDetail.movieRelated}
