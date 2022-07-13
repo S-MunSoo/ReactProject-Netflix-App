@@ -107,7 +107,15 @@ body {
   align-items: center;
   transform: translateY(250%);
 }
-
+// detail Loading
+.detail-loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(250%);
+}
 // detail Page banner
 .detail-banner {
   position: relative;
@@ -137,7 +145,7 @@ body {
 // Movie detail-card
 .detail-card {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   width: 100%;
   height: 100%;
   & img {
@@ -148,9 +156,7 @@ body {
 }
 
 .detail-title {
-  margin-left: 30px;
   & h1 {
-    text-align: start;
     font-size: 60px;
     margin-top: 60px;
     line-height: 72px;
@@ -213,6 +219,7 @@ body {
   padding: 40px;
   cursor: pointer;
   margin-top: 60px;
+  @include center();
   & .review-content {
     padding-top: 20px;
     font-family: $font-family;
@@ -311,7 +318,7 @@ body {
     .related-content {
       padding: 0px 20px 0px 20px;
       width: 330px;
-      height: 200px;
+      height: 180px;
       & img {
         width: 100%;
         height: 100%;
