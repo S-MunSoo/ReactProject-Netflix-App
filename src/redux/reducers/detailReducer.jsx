@@ -7,6 +7,7 @@ let initialState = {
   movieReviews: [],
   movieRelated: [],
   loading: true,
+  totalMovies: [],
 };
 
 function detailReducer(state = initialState, action) {
@@ -26,6 +27,7 @@ function detailReducer(state = initialState, action) {
         movieReviews: payload.movieReviews,
         movieRelated: payload.movieRelated,
         loading: false,
+        totalMovies: payload.totalMovies,
       };
     case "GET_DETAIL_FAILURE":
       return { ...state, loading: false };

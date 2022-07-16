@@ -11,7 +11,7 @@ function getMovies() {
       dispatch({ type: "GET_MOVIES_REQUEST" });
 
       const popularMovieApi = api.get(
-        `/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
+        `/movie/popular?api_key=${API_KEY}&language=en-US&page=10`
       );
       const topRatedApi = api.get(
         `/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
@@ -22,7 +22,6 @@ function getMovies() {
       const genreApi = api.get(
         `genre/movie/list?api_key=${API_KEY}&language=en-US`
       );
-
       // Promise.all([]) : 여러 API를 동시에 병력적으로 한번만 불러주게 해준다.
       let [popular, topRated, upcoming, genreList] = await Promise.all([
         popularMovieApi,

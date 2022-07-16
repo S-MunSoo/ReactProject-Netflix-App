@@ -63,12 +63,3 @@ function getMovieDetail(id) {
   };
 }
 export const detailAction = { getMovieDetail };
-// console.log(
-//   "movieAPITest ",
-//   popularDetail,
-//   topRatedDetail,
-//   upcomingDetail,
-//   movieYoutube,
-//   movieReviews,
-//   movieRelated
-// );

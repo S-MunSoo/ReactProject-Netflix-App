@@ -1,9 +1,9 @@
+// 구글 폰트
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,300&display=swap");
 $back--groundColor: #212529;
 $header-background: #0f0d09;
 $font-color: #fff;
 $font-family: "Montserrat", sans-serif;
-// 구글 폰트
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,300&display=swap");
 
 @mixin center {
   display: flex;
@@ -14,7 +14,8 @@ $font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
 }
 body {
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
 }
 // 헤더부분
 .nav-bar {
@@ -219,7 +220,6 @@ body {
   padding: 40px;
   cursor: pointer;
   margin-top: 60px;
-  @include center();
   & .review-content {
     padding-top: 20px;
     font-family: $font-family;
@@ -342,7 +342,10 @@ body {
     }
   }
 }
+// movie page
 
+.movie-page-img {
+}
 // footer
 footer {
   width: 100%;

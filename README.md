@@ -10,3 +10,4 @@
 - React-multi-carousel(슬라이드) : npm install react-multi-carousel --save
 - React-Spinners : npm install --save react-spinners
 - React-youtube : npm install react-youtube
+- React-paginationnpm : install react-js-pagination
