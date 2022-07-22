@@ -4,6 +4,7 @@ let initialState = {
   upcomingMovies: {},
   loading: true,
   genreList: [],
+  searchMovie: {},
 };
 
 function movieReducer(state = initialState, action) {
@@ -20,6 +21,7 @@ function movieReducer(state = initialState, action) {
         upcomingMovies: payload.upcomingMovie,
         loading: false, // 데이터를 보여줘야 하니까 로딩은 false
         genreList: payload.genreList,
+        searchMovie: payload.searchMovie,
       };
 
     case "GET_MOVIES_FAILURE":

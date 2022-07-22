@@ -1,29 +1,35 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState, useSearchParams } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { movieAction } from "../redux/actions/movieAction";
-import MoviesPage from "../component/MoviesPage";
-import MoviePageNation from "../component/MoviePageNation";
+import SearchMovie from "../component/SearchMovie";
+import { Container, Row, Col } from "react-bootstrap";
+
 const Movie = () => {
+  const [page, setPage] = useState(1);
+  const [query, setQuery] = useSearchParams();
+  let keyword = query.get("query");
+
   const dispatch = useDispatch();
-  const { popularMovies, topRatedMovies, upcomingMovies } = useSelector(
-    (state) => state.movie
-  );
-
-  console.log("popularMovies?", popularMovies);
-
+  const { genreList, searchMovie } = useSelector((state) => state.movie);
+  console.log(searchMovie);
   useEffect(() => {
-    dispatch(movieAction.getMovies());
+    dispatch(movieAction.getMovies(keyword, page));
   }, []);
 
   return (
-    <div>
-      <MoviesPage moviesA={popularMovies} />
-      <MoviesPage moviesA={topRatedMovies} />
-      <MoviesPage moviesA={upcomingMovies} />
-      {/* <MoviePageNation /> */}
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <SearchMovie
+            searchMovie={searchMovie}
+            genreList={genreList}
+            keyword={keyword}
+          />
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
