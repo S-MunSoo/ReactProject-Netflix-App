@@ -11,9 +11,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 const MovieDetailPage = () => {
   let { id } = useParams();
   const movieDetail = useSelector((state) => state.detailMovie);
-
-  console.log("movieDetail???", movieDetail.loading);
-
+  // console.log("movieDetail???", movieDetail.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
