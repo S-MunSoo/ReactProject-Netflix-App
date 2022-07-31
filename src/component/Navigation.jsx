@@ -8,9 +8,10 @@ import {
   Nav,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+
 const Navigation = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" className="nav-bar">
+    <Navbar variant="dark" expand="lg" className="nav-bar">
       <Container fluid>
         <Navbar.Brand href="#" className="nav-back">
           <img

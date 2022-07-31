@@ -4,8 +4,9 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { movieAction } from "../redux/actions/movieAction";
 import SearchMovie from "../component/SearchMovie";
-import { Container, Row, Col } from "react-bootstrap";
 import Pagination from "react-js-pagination";
+import Footer from "../component/Footer";
+import ClipLoader from "react-spinners/ClipLoader";
 const Movie = () => {
   const [page, setPage] = useState(1);
   // const [sortTitle, setSortTitle] = useState("");
@@ -25,13 +26,17 @@ const Movie = () => {
     dispatch(movieAction.getMovies(page));
   }, [page]);
 
-  return (
-    <Container>
-      <Row>
-        <Col>
-          <SearchMovie sortMovie={sortMovie} genreList={genreList} />
-        </Col>
-        <div>
+  if (loading) {
+    return (
+      <div className="movie-loading">
+        <ClipLoader color="#B22222" loading={loading} size={150} />
+      </div>
+    );
+  } else {
+    return (
+      <div className="movie-back">
+        <SearchMovie sortMovie={sortMovie} genreList={genreList} />
+        <div className="moive-naviton">
           <Pagination
             activePage={page}
             hideDisabled={true}
@@ -41,9 +46,10 @@ const Movie = () => {
             onChange={pageHandlerChange}
           />
         </div>
-      </Row>
-    </Container>
-  );
+        <Footer />
+      </div>
+    );
+  }
 };
 
 export default Movie;

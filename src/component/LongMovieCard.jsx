@@ -4,6 +4,7 @@ const LongMovieCard = ({ item }) => {
   console.log("item", item);
   return (
     <div
+      className="long-card"
       style={{
         backgrounImage:
           "url(" +
@@ -11,11 +12,9 @@ const LongMovieCard = ({ item }) => {
           ")",
       }}
     >
-      <div>
+      <div className="long-info">
         <img
           src={`https://image.tmdb.org/t/p/original//${item.poster_path}`}
-          width={300}
-          height={400}
           alt="posterImg"
         />
       </div>
