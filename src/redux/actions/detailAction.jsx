@@ -16,7 +16,7 @@ function getMovieDetail(id) {
         `/movie/${id}upcoming?api_key=${API_KEY}&language=en-US&page=1`
       );
       const genreDetailApi = api.get(
-        `genre/movie/list?api_key=${API_KEY}&language=en-US`
+        `/movie/upcoming?api_key=${API_KEY}&language=en-US&page`
       );
       const movieYoutubeApi = api.get(
         `/movie/${id}/videos?api_key=${API_KEY}&language=en-US`

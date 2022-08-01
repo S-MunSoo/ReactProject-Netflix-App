@@ -1,6 +1,9 @@
 import React from "react";
 import LongMovieCard from "./LongMovieCard";
-
+// import { useParams } from "react-router-dom";
+// import { useDispatch } from "react-redux";
+// import { detailAction } from "../redux/actions/detailAction";
+// import { useNavigate } from "react-router-dom";
 // movie 페이지 검색 및 정렬
 const SearchMovie = ({ sortMovie, genreList }) => {
   return (

@@ -7,7 +7,6 @@ import { detailAction } from "../redux/actions/detailAction";
 import DetailCard from "../component/DetailCard";
 import MovieReview from "../component/MovieReview";
 import ClipLoader from "react-spinners/ClipLoader";
-import Footer from "../component/Footer";
 
 const MovieDetailPage = () => {
   let { id } = useParams();
@@ -35,7 +34,6 @@ const MovieDetailPage = () => {
           related={movieDetail.movieRelated}
           item={movieDetail.movieRelated.results}
         />
-        <Footer />
       </div>
     );
   }
