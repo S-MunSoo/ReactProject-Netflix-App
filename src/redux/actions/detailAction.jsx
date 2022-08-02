@@ -1,5 +1,5 @@
+// 액션 미들웨어
 import api from "../reducers/api";
-
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 function getMovieDetail(id) {
