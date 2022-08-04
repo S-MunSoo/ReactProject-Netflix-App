@@ -9,7 +9,6 @@ function getMovies(page, keyword, sortResult) {
     try {
       // 데이터 도착 전 로딩 true
       dispatch({ type: "GET_MOVIES_REQUEST" });
-
       const popularMovieApi = api.get(
         `/movie/popular?api_key=${API_KEY}&language=en-US&page=${page}`
       );
@@ -41,7 +40,7 @@ function getMovies(page, keyword, sortResult) {
           searchMovieApi,
           sortMovieApi,
         ]);
-      console.log("sortMovie", sortMovie);
+
       dispatch({
         type: "GET_MOVIE_SUCCESS",
         payload: {

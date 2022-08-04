@@ -5,11 +5,9 @@ import { Badge } from "react-bootstrap";
 import moment from "moment";
 // 여러 무비페이지 정보
 const LongMovieCard = ({ item }) => {
-  console.log("item", item);
-
   const navigate = useNavigate();
   const { genreList } = useSelector((state) => state.movie);
-  console.log("genreList", genreList);
+  // console.log("genreList", genreList);
   const longMovieClick = () => {
     navigate(`/Movie/${item.id}`);
   };
@@ -37,7 +35,7 @@ const LongMovieCard = ({ item }) => {
           {moment(item.release_date).format("LL")}
         </div>
         {item.genre_ids?.map((id) => (
-          <Badge bg="danger" className="badge">
+          <Badge bg="danger" className="badge" key={id}>
             {genreList.find((item) => item.id === id)?.name}
           </Badge>
         ))}

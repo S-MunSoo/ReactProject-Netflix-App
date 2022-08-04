@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Navbar,
   Container,
@@ -8,8 +8,17 @@ import {
   Nav,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
+  const navigate = useNavigate();
+  const [search, setSearch] = useState("");
+  // 영화 검색
+  const goToSearch = (e) => {
+    e.preventDefault();
+    // let keyword = e.target.value;
+    navigate(`/Movie?query=${search}`);
+  };
   return (
     <Navbar variant="dark" expand="lg" className="nav-bar">
       <Container fluid>
@@ -34,12 +43,13 @@ const Navigation = () => {
               Movies
             </Link>
           </Nav>
-          <Form className="d-flex">
+          <Form className="d-flex" onSubmit={goToSearch}>
             <FormControl
               type="search"
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              onChange={(e) => setSearch(e.target.value)}
             />
             <Button variant="danger">Search</Button>
           </Form>
