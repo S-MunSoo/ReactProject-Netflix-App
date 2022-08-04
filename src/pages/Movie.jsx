@@ -18,8 +18,6 @@ const Movie = () => {
   const { sortMovie, loading, genreList, searchMovie } = useSelector(
     (state) => state.movie
   );
-  // console.log("searchMovie", searchMovie);
-  // console.log("sortMovie", sortMovie);
 
   // 페이지 네이션
   const pageHandlerChange = (page) => {
@@ -43,6 +41,7 @@ const Movie = () => {
           sortMovie={sortMovie}
           genreList={genreList}
           searchMovie={searchMovie}
+          keyword={keyword}
         />
         <div className="moive-naviton">
           <Pagination
