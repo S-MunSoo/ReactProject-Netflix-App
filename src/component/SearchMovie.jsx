@@ -4,6 +4,7 @@ import LongMovieCard from "./LongMovieCard";
 // movie 페이지 검색 및 정렬
 const SearchMovie = ({ sortMovie, genreList, searchMovie, keyword }) => {
   console.log("searchMovie", searchMovie);
+
   let firstHalf = {};
   let secondHalf = {};
   //  어떤 것을 첫번째로 페이지화 할지

@@ -28,12 +28,11 @@ const MovieReview = ({ review, related }) => {
             review.results.map((item) => (
               <div className="review-content" key={item.id}>
                 <h4>
-                  <div></div>
                   <FontAwesomeIcon icon={faUser} />
                   {item.author}
                 </h4>
                 <p>{item.content}</p>
-                <span>{item.created_at}</span>
+                <span style={{ marginTop: "24px" }}>{item.created_at}</span>
               </div>
               // 노란줄 빨간줄 뜨면 플레그먼트!!!1
             ))}

@@ -16,7 +16,6 @@ const Navigation = () => {
   // 영화 검색
   const goToSearch = (e) => {
     e.preventDefault();
-    // let keyword = e.target.value;
     navigate(`/Movie?query=${search}`);
   };
   return (

@@ -2,9 +2,9 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Movie from "./pages/Movie";
 import MovieDetailPage from "./pages/MovieDetailPage";
-import "./App.scss";
 import Navigation from "./component/Navigation";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.scss";
 
 // 유저 스토리
 // 유저는 배너를 볼 수 있다.
@@ -30,7 +30,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // 9. 영화 검색 가능
 // 10. 영화 정렬 기능
 
-// API_KEY : 95e798cbb20ba2f6e4471768f9024816
 // url : https://api.themoviedb.org/3/movie/550?api_key=95e798cbb20ba2f6e4471768f9024816
 
 function App() {

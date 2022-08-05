@@ -354,10 +354,11 @@ $font-family: "Montserrat", sans-serif;
   }
 }
 // movie long 페이지
-.movie-back {
+#movie-back {
   background-color: $back--groundColor;
   width: 100%;
   height: 100%;
+  position: relative;
   .moive-naviton {
     height: 120px;
     @include center();
@@ -376,6 +377,29 @@ $font-family: "Montserrat", sans-serif;
       border-radius: 30%;
     }
   }
+  .accordion {
+    width: 180px;
+    margin-left: 34px;
+    transform: translateY(220px);
+    border: 2px double #fff;
+    border-radius: 8px;
+
+    & * {
+      background-color: $back--groundColor;
+      color: #fff;
+    }
+    &.accordion-button {
+      background-color: black;
+    }
+    .dropdown {
+      margin-top: 20px;
+      width: fit-content;
+      & :hover {
+        background-color: lightgray;
+        color: black;
+      }
+    }
+  }
 }
 .LMC {
   display: flex;
@@ -390,7 +414,7 @@ $font-family: "Montserrat", sans-serif;
   background-repeat: no-repeat;
   background-position: 50%;
   display: flex;
-  margin: 80px 40px 40px 40px;
+  margin: 40px;
   cursor: pointer;
   border-radius: 34px 0px 34px 0px;
   font-family: $font-family;
