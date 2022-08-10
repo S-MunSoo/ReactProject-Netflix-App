@@ -9,6 +9,8 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -50,7 +52,15 @@ const Navigation = () => {
               aria-label="Search"
               onChange={(e) => setSearch(e.target.value)}
             />
-            <Button variant="danger">Search</Button>
+            <Button variant="danger">
+              <FontAwesomeIcon icon={faSearch} />
+            </Button>
+            <Button
+              variant="secondary"
+              style={{ marginLeft: "10px", borderRadius: "50%" }}
+            >
+              <FontAwesomeIcon icon={faUser} />
+            </Button>
           </Form>
         </Navbar.Collapse>
       </Container>
