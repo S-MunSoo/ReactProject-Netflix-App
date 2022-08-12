@@ -1,12 +1,12 @@
 import React from "react";
 
-const FormInput = () => {
+const FormInput = ({ id, label, errorMsg, inputProps }) => {
   return (
     <div>
-      <label htmlFor=""></label>
-      <input type="text" name="" id="" />
+      <label htmlFor={id}>{label}</label>
+      <input type={id} {...inputProps} />
       <button></button>
-      <div>에러메세지</div>
+      <span>{errorMsg}</span>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import UseForm from "../component/log/hooks/UseForm";
 
 const SinUp = () => {
   return (
-    <div>
+    <div id="sinup-wepper">
       <UseForm />
     </div>
   );

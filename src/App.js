@@ -5,6 +5,7 @@ import MovieDetailPage from "./pages/MovieDetailPage";
 import Navigation from "./component/Navigation";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
+import SinUp from "./pages/SinUp";
 
 // 유저 스토리
 // 유저는 배너를 볼 수 있다.
@@ -40,6 +41,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Movie" element={<Movie />} />
         <Route path="/Movie/:id" element={<MovieDetailPage />} />
+        <Route path="/sinup" element={<SinUp />} />
       </Routes>
     </div>
   );

@@ -20,6 +20,10 @@ const Navigation = () => {
     e.preventDefault();
     navigate(`/Movie?query=${search}`);
   };
+  // 로그인 페이지 이동
+  const loginHandler = () => {
+    navigate("/sinup");
+  };
   return (
     <Navbar variant="dark" expand="lg" className="nav-bar">
       <Container fluid>
@@ -57,6 +61,7 @@ const Navigation = () => {
             </Button>
             <Button
               variant="secondary"
+              onClick={loginHandler}
               style={{ marginLeft: "10px", borderRadius: "50%" }}
             >
               <FontAwesomeIcon icon={faUser} />

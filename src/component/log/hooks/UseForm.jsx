@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import FormInput from "../FormInput";
 
@@ -23,10 +23,80 @@ const UseForm = () => {
       mode: "onBlur",
     });
 
+  useEffect(() => {
+    setFocus("id");
+  }, []);
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    // 모달
+  };
   return (
-    <div>
-      <FormInput />
-    </div>
+    <>
+      <form
+        className="sinup"
+        autoComplete="off"
+        onSubmit={handleSubmit(onSubmitHandler)}
+      >
+        <FormInput
+          id={"id"}
+          label={"아이디"}
+          errorMsg={formState.errors["id"]?.message}
+          inputProps={{
+            type: "text",
+            placeholder: "아이디를 입력해주세요.",
+            ...register("id", {
+              //id 라는 유니크한 값을 구하기 위해
+              pattern: {
+                // 벨리데이션 값
+                valeu: ID_REGEX,
+                message: ERROR_MSG.invalidId,
+              },
+              required: ERROR_MSG.required, //필수 정보
+            }),
+          }}
+        />
+        <FormInput
+          id={"pw"}
+          label={"비밀번호"}
+          errorMsg={formState.errors["pw"]?.message}
+          inputProps={{
+            type: "password",
+            placeholder: "비밀번호를 입력해주세요.",
+            autoComplete: "off",
+            ...register("pw", {
+              pattern: {
+                value: PW_REGEX,
+                message: ERROR_MSG.invalidPw,
+              },
+              required: ERROR_MSG.required,
+              // onBlur 가 일어났을때 트리거 콜백 함수 실행
+              onBlur: () => trigger("confirmPw"),
+            }),
+          }}
+        />
+        <FormInput
+          id={"confirmPw"}
+          label={"비밀번호 확인"}
+          errorMsg={formState.errors["confirmPw"]?.message}
+          inputProps={{
+            type: "password",
+            placeholder: "비밀번호를 확인을 입력해주세요.",
+            autoComplete: "off",
+            ...register("confirmPw", {
+              validate: {
+                sameWithPw: (V) =>
+                  V === getValues("pw") || ERROR_MSG.invalidConfirmPw,
+              },
+              required: ERROR_MSG.required,
+            }),
+          }}
+        />
+        <div>
+          <input id="submit" type="submit" value="가입하기" />
+        </div>
+      </form>
+    </>
   );
 };
 

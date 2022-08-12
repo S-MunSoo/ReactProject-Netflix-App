@@ -9,7 +9,6 @@ import Footer from "../component/Footer";
 import ClipLoader from "react-spinners/ClipLoader";
 import Accordion from "react-bootstrap/Accordion";
 import Dropdown from "react-bootstrap/Dropdown";
-import { hover } from "@testing-library/user-event/dist/hover";
 
 const Movie = () => {
   const [page, setPage] = useState(1);
