@@ -15,7 +15,6 @@ const DetailCard = ({ detail, youtube }) => {
       rel: 0,
     },
   };
-  console.log("detail??????", detail);
 
   return (
     <Container>

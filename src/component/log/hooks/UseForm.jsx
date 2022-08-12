@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import FormInput from "../FormInput";
+import { Badge } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 // 벨리데이션 정규식 표현
 const ID_REGEX = new RegExp("^[a-z0-9_-]{5,20}$");
@@ -8,12 +10,14 @@ const PW_REGEX = new RegExp("^[a-zA-Z0-9]{8,16}$");
 
 const ERROR_MSG = {
   required: "필수 정보입니다.",
-  invalidId: "5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.",
+  invalidId: "5~20자의 영문 소문자,숫자와 특수기호(_),(-)만 사용 가능합니다.",
   invalidPw: "8~16자 영문 대 소문자, 숫자를 사용하세요.",
   invalidConfirmPw: "비밀번호가 일치하지 않습니다.",
 };
 
-const UseForm = () => {
+const UseForm = ({ setAuth }) => {
+  const navigate = useNavigate();
+  // const Params = useParams();
   // register : 사용하고 있는 모든 input에 대하여 레지스터 해줘야 한다.
   // getValues : value를 얻어 오기 위한 함수
   // formState : 현재 form의 state를 보기위한 함수
@@ -28,8 +32,8 @@ const UseForm = () => {
   }, []);
 
   const onSubmitHandler = (e) => {
-    e.preventDefault();
-    // 모달
+    setAuth(true);
+    navigate("/");
   };
   return (
     <>
@@ -38,6 +42,7 @@ const UseForm = () => {
         autoComplete="off"
         onSubmit={handleSubmit(onSubmitHandler)}
       >
+        <h3>10초 회원가입</h3>
         <FormInput
           id={"id"}
           label={"아이디"}
@@ -49,7 +54,7 @@ const UseForm = () => {
               //id 라는 유니크한 값을 구하기 위해
               pattern: {
                 // 벨리데이션 값
-                valeu: ID_REGEX,
+                value: ID_REGEX,
                 message: ERROR_MSG.invalidId,
               },
               required: ERROR_MSG.required, //필수 정보
@@ -92,10 +97,11 @@ const UseForm = () => {
             }),
           }}
         />
-        <div>
-          <input id="submit" type="submit" value="가입하기" />
-        </div>
+        <Badge bg="danger" className="login-btn">
+          <input id="submit" type="submit" value="로그인" />
+        </Badge>
       </form>
+      {/* <Modal ref={modalRef} getValues={getValues} /> */}
     </>
   );
 };

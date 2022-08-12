@@ -1,10 +1,10 @@
 import React from "react";
 import UseForm from "../component/log/hooks/UseForm";
 
-const SinUp = () => {
+const SinUp = ({ setAuth }) => {
   return (
     <div id="sinup-wepper">
-      <UseForm />
+      <UseForm setAuth={setAuth} />
     </div>
   );
 };

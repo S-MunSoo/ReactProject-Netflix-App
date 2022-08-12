@@ -1,14 +1,19 @@
-import React from "react";
+import React, { memo } from "react";
 
 const FormInput = ({ id, label, errorMsg, inputProps }) => {
   return (
     <div>
-      <label htmlFor={id}>{label}</label>
-      <input type={id} {...inputProps} />
-      <button></button>
-      <span>{errorMsg}</span>
+      <label className="login-label" htmlFor={id}>
+        {label}
+      </label>
+      <input type={id} {...inputProps} className="login-input" />
+
+      <div className="error-msg">{errorMsg}</div>
     </div>
   );
 };
 
-export default FormInput;
+export default memo(
+  FormInput,
+  (prevProps, nextProps) => prevProps.errorMsg === nextProps.errorMsg
+);

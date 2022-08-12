@@ -493,14 +493,65 @@ $font-family: "Montserrat", sans-serif;
   background-size: cover;
   height: 100vh;
   @include center();
+  & h3 {
+    color: #fff;
+    transform: translateY(-20px);
+    font-weight: 700;
+  }
+  .sinup {
+    position: absolute;
+    @include center();
+    flex-direction: column;
+    background-color: $header-background;
+    width: 460px;
+    height: 586px;
+  }
+  .login-label {
+    display: block;
+    font-size: 18px;
+    color: #8c8c8c;
+    font-weight: 700;
+  }
+  .login-input {
+    width: 300px;
+    height: 50px;
+    background-color: #444444;
+    border-bottom: 3px solid #ffa500;
+    padding: 0px 20px 0px 20px;
+    color: #fff;
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+  .error-msg {
+    position: absolute;
+    color: red;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+    margin-top: -18px;
+  }
+  .login-btn {
+    margin-top: 20px;
+    font-size: 26px;
+    width: 300px;
+    height: 46px;
+    & input {
+      text-align: center;
+      color: #fff;
+      background: none;
+      border: none;
+      $font-family: "Montserrat", sans-serif;
+    }
+  }
 }
-.sinup {
-  position: absolute;
+// 회원가입 팝업
+.login-modal {
+  width: 450px;
+  height: 300px;
   @include center();
-  flex-direction: column;
-  background-color: $header-background;
-  width: 453px;
-  height: 520px;
+  transform: translateX(500px);
+  .modal-content {
+  }
 }
 // footer
 footer {

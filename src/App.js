@@ -6,7 +6,8 @@ import Navigation from "./component/Navigation";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
 import SinUp from "./pages/SinUp";
-
+import { useState } from "react";
+import PrivateRoute from "./routes/PrivateRoute";
 // 유저 스토리
 // 유저는 배너를 볼 수 있다.
 // 유저는 가장 인기있는 영화 리스트, 가장 평점 좋은 영화 리스트, 상영 예정작 리스트를 볼 수 있다.
@@ -34,14 +35,17 @@ import SinUp from "./pages/SinUp";
 // url : https://api.themoviedb.org/3/movie/550?api_key=95e798cbb20ba2f6e4471768f9024816
 
 function App() {
+  const [auth, setAuth] = useState(false);
+
   return (
     <div>
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Movie" element={<Movie />} />
-        <Route path="/Movie/:id" element={<MovieDetailPage />} />
-        <Route path="/sinup" element={<SinUp />} />
+        {/* <Route path="/Movie/:id" element={<MovieDetailPage />} /> */}
+        <Route path="/Movie/:id" element={<PrivateRoute auth={auth} />} />
+        <Route path="/sinup" element={<SinUp setAuth={setAuth} />} />
       </Routes>
     </div>
   );
