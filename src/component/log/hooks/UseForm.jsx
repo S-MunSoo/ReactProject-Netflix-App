@@ -101,6 +101,7 @@ const UseForm = ({ setAuth }) => {
           <input id="submit" type="submit" value="로그인" />
         </Badge>
       </form>
+      <footer></footer>
       {/* <Modal ref={modalRef} getValues={getValues} /> */}
     </>
   );
