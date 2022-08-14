@@ -11,7 +11,6 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // 리덕스 셋팅
   <Provider store={store}>
-    {/* // 라우터 감싸기 BrowserRouter */}
     <BrowserRouter>
       <App />
     </BrowserRouter>

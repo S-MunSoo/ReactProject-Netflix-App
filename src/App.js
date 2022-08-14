@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Movie from "./pages/Movie";
-import MovieDetailPage from "./pages/MovieDetailPage";
 import Navigation from "./component/Navigation";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";

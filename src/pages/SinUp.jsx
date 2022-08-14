@@ -3,7 +3,7 @@ import UseForm from "../component/log/hooks/UseForm";
 
 const SinUp = ({ setAuth }) => {
   return (
-    <div id="sinup-wepper">
+    <div className="sinup-wepper">
       <UseForm setAuth={setAuth} />
     </div>
   );
