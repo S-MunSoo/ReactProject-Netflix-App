@@ -13,3 +13,4 @@
 - React-paginationnpm : install react-js-pagination
 - React-momen : npm i moment
 - React-useForm : npm i react-hook-form
+- Redux-logger : npm i --save redux-logger
