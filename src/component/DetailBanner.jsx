@@ -7,7 +7,7 @@ const DetailBanner = () => {
         src="https://images.hdqwalls.com/download/polygonal-abstract-red-dark-background-eo-1280x1024.jpg"
         alt="detailBanner"
       />
-      <h3>NETFLIX</h3>
+      <h3>MY NETFLIX</h3>
     </div>
   );
 };

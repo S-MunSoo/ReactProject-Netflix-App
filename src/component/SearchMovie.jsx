@@ -7,6 +7,7 @@ const SearchMovie = ({ sortMovie, genreList, searchMovie, keyword }) => {
 
   let firstHalf = {};
   let secondHalf = {};
+
   //  어떤 것을 첫번째로 페이지화 할지
   if (searchMovie.results !== null || keyword !== null) {
     // 검색했을 시

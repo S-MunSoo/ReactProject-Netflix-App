@@ -13,8 +13,6 @@ const Home = () => {
   const { popularMovies, topRatedMovies, upcomingMovies, loading } =
     useSelector((state) => state.movie);
 
-  // console.log("home???", popularMovies, topRatedMovies, upcomingMovies);
-
   useEffect(() => {
     dispatch(movieAction.getMovies());
   }, []);

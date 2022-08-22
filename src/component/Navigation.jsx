@@ -47,6 +47,9 @@ const Navigation = () => {
             <Link to="/Movie" className="nav-item">
               Movies
             </Link>
+            <Link to="/favor" className="nav-item">
+              My Favorite
+            </Link>
           </Nav>
           <Form className="d-flex" onSubmit={goToSearch}>
             <FormControl

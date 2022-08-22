@@ -13,7 +13,6 @@ function movieReducer(state = initialState, action) {
   switch (type) {
     case "GET_MOVIES_REQUEST":
       return { ...state, loading: true };
-
     case "GET_MOVIE_SUCCESS":
       return {
         ...state,
@@ -25,7 +24,6 @@ function movieReducer(state = initialState, action) {
         searchMovie: payload.searchMovie,
         sortMovie: payload.sortMovie,
       };
-
     case "GET_MOVIES_FAILURE":
       return { ...state, loading: false };
     default:

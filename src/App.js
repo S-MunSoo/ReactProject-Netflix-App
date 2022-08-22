@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
 import SinUp from "./pages/SinUp";
 import { useState } from "react";
+import Favorite from "./pages/Favorite";
 import PrivateRoute from "./routes/PrivateRoute";
 // 유저 스토리
 // 유저는 배너를 볼 수 있다.
@@ -37,7 +38,7 @@ function App() {
   const [auth, setAuth] = useState(false);
 
   return (
-    <div>
+    <>
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -45,8 +46,10 @@ function App() {
         {/* <Route path="/Movie/:id" element={<MovieDetailPage />} /> */}
         <Route path="/Movie/:id" element={<PrivateRoute auth={auth} />} />
         <Route path="/sinup" element={<SinUp setAuth={setAuth} />} />
+        <Route path="/favor" element={<Favorite />} />
+        <Route path="/*" element={<p>Not Found</p>} />
       </Routes>
-    </div>
+    </>
   );
 }
 
