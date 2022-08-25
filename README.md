@@ -1,5 +1,7 @@
 ## 🎬 My Netflix
 
+### 사용기술
+
 #### NPM 프로젝트 구성 요소
 
 - 부트스트랩 : npm install react-bootstrap bootstrap
