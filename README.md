@@ -1,5 +1,5 @@
 ## 🎬 My Netflix
-[데모](https://godmunsoo.netlify.app/)
+https://godmunsoo.netlify.app
 
 ### 사용기술
 
